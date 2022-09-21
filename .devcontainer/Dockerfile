@@ -9,17 +9,13 @@ COPY ./binaries /tmp/binaries
 # Install Bicep
 RUN \
     # Install bicep CLI
-    unzip /tmp/binaries/bicep-release-linux-x64.zip -d /tmp/bicep-bin \
-    && cp /tmp/bicep-bin/bicep /usr/local/bin/bicep \
+    cp /tmp/binaries/bicep-release-linux-x64 /usr/local/bin/bicep \
     && chmod +x /usr/local/bin/bicep \
     # Symbolic link for AzCLI to pick up Bicep binary
     && mkdir -p /home/vscode/.azure/bin \
     && ln -s /usr/local/bin/bicep /home/vscode/.azure/bin/bicep \
     && chown -R vscode /home/vscode/.azure \
-    # Extract VSCode extension to /usr/local/share
-    && unzip /tmp/binaries/vscode-bicep.vsix.zip -d /tmp/bicep-vsix \
-    && cp /tmp/bicep-vsix/vscode-bicep.vsix /usr/local/share/vscode-bicep.vsix \
+    # Move VSCode extension to /usr/local/share
+    && cp /tmp/binaries/vscode-bicep.vsix /usr/local/share/vscode-bicep.vsix \
     # Clean up
-    && rm -Rf /tmp/binaries \
-    && rm -Rf /tmp/bicep-bin \
-    && rm -Rf /tmp/bicep-vsix
+    && rm -Rf /tmp/binaries
