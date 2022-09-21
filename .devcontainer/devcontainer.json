@@ -1,0 +1,19 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.238.1/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { "VARIANT": "ubuntu-22.04" }
+	},
+	"extensions": [
+	  "/usr/local/share/vscode-bicep.vsix",
+	  "editorconfig.editorconfig",
+	  "github.vscode-pull-request-github"
+	],
+	"remoteUser": "vscode",
+	"features": {
+		"github-cli": "latest",
+		"azure-cli": "latest"
+	}
+}
