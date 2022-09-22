@@ -18,7 +18,7 @@ var collaborators = [
 ]
 
 resource collab 'repositories/collaborators@v1' = [for collaborator in collaborators: {
-  repo: 'anttestrepo'
+  repo: repo.name
   username: collaborator
   permission: 'push'
 }]
