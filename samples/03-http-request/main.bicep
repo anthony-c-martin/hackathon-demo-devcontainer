@@ -1,10 +1,10 @@
 import 'http@v1' as http {}
 
-param lattitude string
+param latitude string
 param longitude string
 
 resource pointsReq 'request@v1' = {
-  uri: 'https://api.weather.gov/points/${lattitude},${longitude}'
+  uri: 'https://api.weather.gov/points/${latitude},${longitude}'
   format: 'json'
 }
 

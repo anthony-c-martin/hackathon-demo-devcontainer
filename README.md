@@ -23,7 +23,7 @@ bash ./samples/02-create-repo/deploy.sh <github_access_token>
 ```
 
 ### 03: HTTP Request
-Submits an HTTP GET request to https://httpstat.us/418, and returns the status string.
+Returns the current weather forecast, given a latitude and longitude.
 
 Run:
 ```sh
